@@ -1,0 +1,8 @@
+{
+  "name": "ATS Coach AI - Tailored Edition",
+  "description": "ATS resume evaluator and tailor that keeps real work history by default, may invent projects, and can add work experience when the candidate\u0027s real experience is thin.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

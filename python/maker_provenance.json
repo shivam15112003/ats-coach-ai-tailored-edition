@@ -1,0 +1,180 @@
+{
+  "source_file": "resume_and_cover_maker.py",
+  "source_sha256": "295830fab7d921ae95e881169b2fec249d70da0d9f725d4c5e091babcfac6462",
+  "functions": {
+    "latex_escape": {
+      "source_lines": [
+        7847,
+        7862
+      ],
+      "original_sha256": "fd3563c8f35e84fa57dba4ab969f531c7b05b17317dbca828fa46b1700fdba36",
+      "adaptations": []
+    },
+    "word_count": {
+      "source_lines": [
+        7919,
+        7923
+      ],
+      "original_sha256": "265d41e7481cff6802dd8c5ca0d03e7eeed27cb3070ee526092591572b36e778",
+      "adaptations": []
+    },
+    "format_resume_header": {
+      "source_lines": [
+        9449,
+        9540
+      ],
+      "original_sha256": "8adfaaecac4325f090d6248b8f6658ca71a02bc781a67b6d623ef1a24a02c89e",
+      "adaptations": [
+        "source header only; no fixed email/profile/name",
+        "compact header gap and command delimiters"
+      ]
+    },
+    "format_education": {
+      "source_lines": [
+        9543,
+        9617
+      ],
+      "original_sha256": "718379a613dbbe0983406ade23288f8c4e3ff55d85020a41f0b955f34d14d771",
+      "adaptations": []
+    },
+    "format_summary": {
+      "source_lines": [
+        9691,
+        9695
+      ],
+      "original_sha256": "2bb64fc483c07f2a244bf6c0b47cfa9a832a008e01258a51bc14f2f6c4d856a1",
+      "adaptations": []
+    },
+    "format_skills": {
+      "source_lines": [
+        9698,
+        10024
+      ],
+      "original_sha256": "a9c53877deb1b28994b799ce8ac1f6b250bed5dbc03678286fbd84bd191aa546",
+      "adaptations": [
+        "profession-neutral skills label"
+      ]
+    },
+    "format_projects": {
+      "source_lines": [
+        10072,
+        10151
+      ],
+      "original_sha256": "b5da440576dec4c84e615975cfdde682f66677557535ad28ddba3eefd51cecb2",
+      "adaptations": []
+    },
+    "format_experience": {
+      "source_lines": [
+        10536,
+        10616
+      ],
+      "original_sha256": "837963501bcb0127254fd87af2ff0829ff80983ecc2d19a8161b92038668f95d",
+      "adaptations": []
+    },
+    "format_certifications": {
+      "source_lines": [
+        10633,
+        10659
+      ],
+      "original_sha256": "cea64d9c14c9da7974316283131efa85b76430d814769abfd894628bc1e07e95",
+      "adaptations": []
+    },
+    "format_extracurricular": {
+      "source_lines": [
+        10662,
+        10682
+      ],
+      "original_sha256": "6586f1fd2e3b6c61230fa15606aa37b1f10155ce07df7c74289155b0a8b25ff4",
+      "adaptations": []
+    },
+    "build_cover_header_block": {
+      "source_lines": [
+        10688,
+        10761
+      ],
+      "original_sha256": "8ee3d147664a370c025a3fcba37bef2faa5161cacec2db8c59a35a7106876fdd",
+      "adaptations": [
+        "source header only; no fixed email/profile/name",
+        "compact header gap and command delimiters"
+      ]
+    },
+    "build_cover_company_block": {
+      "source_lines": [
+        10764,
+        10776
+      ],
+      "original_sha256": "db057316746b19538f34f770a52ca4fa3cf0e869d7d92640969e5f1d74751419",
+      "adaptations": []
+    },
+    "build_cover_body_block": {
+      "source_lines": [
+        10779,
+        10810
+      ],
+      "original_sha256": "6a0ed9d965d64f8a02dc0feb443f116c06abf9a8335e817abf10f2c59347ca84",
+      "adaptations": [
+        "preserve original currency instead of assuming USD"
+      ]
+    },
+    "build_cover_closing_block": {
+      "source_lines": [
+        10813,
+        10821
+      ],
+      "original_sha256": "6ee975d009e4c009f14fe91efe5f918b9923378db8336facb6eec3f780dd8470",
+      "adaptations": [
+        "omit missing signature instead of adding placeholder"
+      ]
+    },
+    "write_resume_tex": {
+      "source_lines": [
+        10827,
+        10857
+      ],
+      "original_sha256": "cd315ca08bd851b7b257b5c346cdad3cf65b5df0de3cd4979d1cf40f56e79651",
+      "adaptations": [
+        "omit absent sections; preserve generic additional sections"
+      ]
+    },
+    "check_exactly_one_page": {
+      "source_lines": [
+        10918,
+        10926
+      ],
+      "original_sha256": "d754720928ea05a09ccb927f0779a15418336fd676b631a59664ff039cd1ab22",
+      "adaptations": []
+    },
+    "_uniform_resume_font_scale": {
+      "source_lines": [
+        10969,
+        10980
+      ],
+      "original_sha256": "1dfa9404a1c113fda84549794e674af32eea644ce6af6605aa374eef286aa01e",
+      "adaptations": []
+    },
+    "_grow_resume_fonts_to_fit": {
+      "source_lines": [
+        11014,
+        11033
+      ],
+      "original_sha256": "05364089659ae71a9f55ba97cfc25016c76fc448905d9768f435237fd24d583a",
+      "adaptations": []
+    },
+    "compile_resume_one_page": {
+      "source_lines": [
+        11036,
+        11136
+      ],
+      "original_sha256": "893730fc481441ce7e2f441cbf6ed2603c0599ac0f6cf38eafc6996aebbbaa1f",
+      "adaptations": []
+    },
+    "compile_resume_one_page_autofit": {
+      "source_lines": [
+        11139,
+        11284
+      ],
+      "original_sha256": "8da6d63a85b0d34bfd0fbfb390aee99818afc0c7f7ea8d400892a7976b6d7358",
+      "adaptations": []
+    }
+  }
+}

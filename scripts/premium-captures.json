@@ -1,0 +1,14 @@
+{
+  "hero":{"file":"hero.jpg","width":1521,"height":633,"crop":{"x":815,"y":155,"w":545,"h":452}},
+  "sample":{"file":"hero.jpg","width":1521,"height":633,"crop":{"x":145,"y":165,"w":600,"h":430},"marks":[{"x":149,"y":442,"w":243,"h":53}]},
+  "input":{"file":"input-new.jpg","width":1520,"height":1682,"crop":{"x":160,"y":1025,"w":1216,"h":540},"marks":[{"x":1181,"y":1495,"w":183,"h":55}]},
+  "evidence":{"file":"diagnosis-new.jpg","width":1520,"height":1891,"crop":{"x":160,"y":806,"w":1216,"h":464}},
+  "tabs":{"file":"workspace-new.jpg","width":1521,"height":633,"crop":{"x":150,"y":326,"w":1205,"h":275},"marks":[{"x":156,"y":474,"w":1191,"h":56}]},
+  "canvas":{"file":"canvas-new.jpg","width":1521,"height":633,"crop":{"x":239,"y":24,"w":1013,"h":405},"marks":[{"x":430,"y":35,"w":549,"h":43},{"x":628,"y":89,"w":128,"h":36}]},
+  "letter":{"file":"letter-full.jpg","precropped":"letter-cropped.png","width":1520,"height":2874,"crop":{"x":180,"y":842,"w":1166,"h":435},"marks":[{"x":327,"y":845,"w":541,"h":47}]},
+  "application-controls":{"file":"application-new.jpg","width":1520,"height":2024,"crop":{"x":180,"y":767,"w":1175,"h":440},"marks":[{"x":181,"y":903,"w":295,"h":47},{"x":181,"y":1157,"w":146,"h":43}]},
+  "interview-settings":{"file":"interview-new.jpg","width":1520,"height":1596,"crop":{"x":180,"y":650,"w":1175,"h":380},"marks":[{"x":181,"y":765,"w":364,"h":63},{"x":197,"y":974,"w":143,"h":41}]},
+  "application":{"file":"application-new.jpg","width":1520,"height":2024,"crop":{"x":180,"y":1300,"w":1175,"h":485},"marks":[{"x":182,"y":1361,"w":1169,"h":223}]},
+  "interview":{"file":"interview-new.jpg","width":1520,"height":1596,"crop":{"x":180,"y":900,"w":1175,"h":421},"marks":[{"x":197,"y":974,"w":143,"h":41},{"x":181,"y":1277,"w":302,"h":42}]},
+  "workspace":{"file":"checklist-new.jpg","width":1520,"height":1596,"crop":{"x":950,"y":130,"w":425,"h":490},"marks":[{"x":1072,"y":141,"w":285,"h":48},{"x":970,"y":417,"w":377,"h":145}]}
+}

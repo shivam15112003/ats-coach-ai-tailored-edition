@@ -1,0 +1,12 @@
+[
+  {"flow":["Resume + target job","Match diagnosis","Edit and practice"],"hint":"Your session has three main stages."},
+  {"image":"input.jpg","sourceWidth":1521,"sourceHeight":695,"crop":{"x":150,"y":300,"w":1210,"h":390},"hint":"1 Load the sample    2 Resume    3 Target job","marks":[{"x":1124,"y":326,"w":230,"h":44},{"x":177,"y":409,"w":340,"h":46},{"x":786,"y":409,"w":400,"h":46}]},
+  {"flow":["Read the breakdown","Review the evidence","Generate the resume"],"hint":"The score helps explain alignment. Review the supporting evidence.","note":"An educational estimate does not predict a hiring decision."},
+  {"image":"canvas.jpg","sourceWidth":1521,"sourceHeight":695,"crop":{"x":330,"y":20,"w":870,"h":360},"hint":"1 Adjust formatting    2 Save with Done Editing","marks":[{"x":572,"y":40,"w":86,"h":49},{"x":535,"y":98,"w":150,"h":43}]},
+  {"image":"cover-letter.png","sourceWidth":1920,"sourceHeight":799,"crop":{"x":615,"y":315,"w":1210,"h":455},"hint":"1 Cover letter tab    2 Formatting    3 Done Editing","marks":[{"x":880,"y":331,"w":313,"h":49},{"x":786,"y":712,"w":575,"h":51},{"x":1681,"y":420,"w":132,"h":43}]},
+  {"image":"application.jpg","sourceWidth":1920,"sourceHeight":799,"crop":{"x":620,"y":215,"w":1200,"h":545},"hint":"1 Record    2 Review your transcript    3 Generate the answer","marks":[{"x":634,"y":420,"w":150,"h":43},{"x":650,"y":265,"w":775,"h":49},{"x":632,"y":545,"w":238,"h":46}]},
+  {"image":"interview.png","sourceWidth":1920,"sourceHeight":1010,"crop":{"x":615,"y":255,"w":1200,"h":500},"hint":"1 Choose a practice type    2 Review feedback after your session","note":"Sample session results. Your questions and feedback will differ.","marks":[{"x":632,"y":336,"w":484,"h":47},{"x":636,"y":540,"w":574,"h":97}]},
+  {"flow":["Open the app in Chrome","Allow microphone access","Record, review, submit"],"hint":"Voice answers become editable text before you submit.","note":"Also check Windows Privacy & security > Microphone. Use the published app outside the AI Studio preview."},
+  {"flow":["Check names and facts","Save your edits","Download the final PDF"],"hint":"Review the document you will actually send.","note":"Keep your downloaded documents before leaving the session."},
+  {"flow":["Try the sample","Build your application","Reopen help anytime"],"hint":"Thank you for watching. You are ready to get started."}
+]

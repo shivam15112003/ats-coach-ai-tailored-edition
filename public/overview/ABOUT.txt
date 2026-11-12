@@ -1,0 +1,9 @@
+ATS Coach AI — App Overview
+
+Eight-slide client and user overview. The separate thirteen-slide walkthrough lives in /guide.
+Both editable decks were authored with native text, real app screenshots, and explanatory highlights, then imported and reviewed in Google Slides. Narration and provided background music were generated in Google Vids using the reviewed scripts in src/data/appOverview.json and src/data/gettingStarted.json.
+Both final videos use checked Google Slides PDF frames with the Google Vids audio so the videos and slide decks match without image conversion glitches.
+Both videos include real anonymized app screenshots and a Thank You ending. Educational scores do not guarantee interviews or employment.
+Sentence captions follow the measured scene boundaries. The full narration is also available as an in-app transcript and in the PowerPoint speaker notes.
+
+Current packaging helper: scripts/package_premium_media.py. Caption timings use measured scene boundaries and approximate sentence timing within each scene.

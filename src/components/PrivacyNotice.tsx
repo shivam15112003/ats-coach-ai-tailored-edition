@@ -1,0 +1,4 @@
+import { ShieldCheck } from "lucide-react";
+export function PrivacyNotice() {
+  return <aside className="privacy-notice" aria-label="Privacy and data guidance"><ShieldCheck className="w-5 h-5 shrink-0 text-[#1E6A63]" /><div><h2>Start with privacy in mind</h2><p>Remove personal identifiers before using AI, or explore the anonymized sample.</p><details><summary>How your materials are used</summary><p>Application materials are sent to Google when you use AI features. Google unpaid services may review submitted text. Remove street addresses, phone numbers, personal email addresses, Social Security numbers, and national IDs before uploading. Your session stays in this browser's memory. Downloaded workspaces contain your materials; store and share them deliberately.</p><p>Browser speech recognition may use an online speech service. You can always type instead.</p></details></div></aside>;
+}

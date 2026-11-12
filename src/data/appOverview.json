@@ -1,0 +1,48 @@
+[
+  {
+    "title": "Your experience. A clearer next step.",
+    "subtitle": "ATS Coach AI",
+    "narration": "Your experience deserves a clear introduction. ATS Coach AI helps you understand how your background fits a role, prepare your application, and practice the conversation. Explore the complete workflow with an interactive sample."
+  },
+  {
+    "title": "One application workspace",
+    "subtitle": "A connected path through preparation",
+    "narration": "Bring a resume and a target job. Review the evidence behind the match, edit your resume and cover letter, prepare application answers, and practice interviews. Each step keeps your own experience at the center.",
+    "steps": [
+      "Understand the match",
+      "Edit your documents",
+      "Prepare answers",
+      "Practice interviews"
+    ]
+  },
+  {
+    "title": "The evidence behind the match",
+    "subtitle": "Exact evidence, related experience, and gaps",
+    "narration": "The diagnosis explains what your resume supports. Separate exact matches from related experience and missing requirements. Use the educational score as a starting point for review. It does not predict a hiring decision."
+  },
+  {
+    "title": "Documents you can make your own",
+    "subtitle": "Direct editing with fonts, spacing, and PDF review",
+    "narration": "Click into the document canvas to edit your text. Adjust the font, spacing, and margins, then review the PDF. A matching cover letter gives you another starting point that you can revise in your own voice."
+  },
+  {
+    "title": "Application answers with evidence",
+    "subtitle": "A suggestion you can inspect and revise",
+    "narration": "Prepare answers using your saved materials. Type a question or dictate it, then review a grounded suggestion and its supporting evidence. Unsupported details prompt a request for information instead of invented experience."
+  },
+  {
+    "title": "Interview practice with text and voice",
+    "subtitle": "Spoken questions and editable answer transcripts",
+    "narration": "Hear a question through your speakers. Respond by typing or speaking into your microphone, then review the transcript before submitting. Live practice adds feedback and follow-up questions, with your latest application materials as context."
+  },
+  {
+    "title": "Useful for individual and guided preparation",
+    "subtitle": "Job seekers, coaches, universities, and client demos",
+    "narration": "Job seekers can prepare independently. Coaches and university programs can guide a review using the same explained workflow. Save the application workspace locally, download the files you approve, and keep a separate set for each role."
+  },
+  {
+    "title": "Thank you",
+    "subtitle": "Try the interactive sample",
+    "narration": "See how the workflow fits your next application. Open ATS Coach AI and choose Explore the interactive sample. Use the walkthrough whenever you need help. You review the facts and choose what to share. Thank you."
+  }
+]
