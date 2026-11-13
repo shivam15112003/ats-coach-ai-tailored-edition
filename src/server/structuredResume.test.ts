@@ -60,10 +60,12 @@ test("source-preserved mode uses the same formatted entries and bullet lists",()
  assert.ok(result.includes('\\begin{itemize}'));
  assert.equal(result,buildLatexFromStructure(d));
 });
-test("generic prompt removes personal overrides and never requires fabricated metrics",()=>{
+test("generic prompt removes personal overrides and allows tailored projects",()=>{
  assert.doesNotMatch(RESUME_MAKER_PROMPT,/shiva|amity|3\.89|95\+/i);
- assert.match(RESUME_MAKER_PROMPT,/valid technical contribution needs no invented number/);
+ assert.match(RESUME_MAKER_PROMPT,/MAY BE INVENTED FREELY/);
+ assert.match(RESUME_MAKER_PROMPT,/Never invent, guess, or complete a missing link/);
  const d=resumeMakerStructure(engineering);
  assert.equal(extractedStructureIssue(structureToMarkdown(d),d),null);
- assert.notEqual(extractedStructureIssue('No engineering background provided.',d),null);
+ const empty=resumeMakerStructure({header:{name:""}});
+ assert.notEqual(extractedStructureIssue('No engineering background provided.',empty),null);
 });

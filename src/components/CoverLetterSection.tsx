@@ -322,7 +322,7 @@ export function CoverLetterSection({
                 Generate a Matching Cover Letter
               </h4>
               <p className="text-xs text-[#22302E]/75 mt-1 leading-relaxed">
-                Connect your authentic resume achievements directly to the employer's needs. Completely grounded in your real background with zero invented claims, and ready for instant PDF export.
+                Connect your real achievements and tailored projects directly to the employer's needs, with missing profile links left out. Ready for instant PDF export.
               </p>
             </div>
             <button

@@ -29,9 +29,11 @@ export function structureToMarkdown(d:ResumeSectionData):string {
  return lines.filter(Boolean).join('\n');
 }
 export function extractedStructureIssue(original:string,d:ResumeSectionData):string|null{
- const normalize=(v:string)=>v.normalize('NFKC').toLowerCase().replace(/[\u2013\u2014]/g,'-').replace(/\s+/g,'');
- const fields=[d.summary,...d.education.flatMap(e=>[e.school,e.degree,e.location,e.dates,e.gpa||'',e.coursework||'']),...d.experience.flatMap(e=>[e.role,e.company,e.location,e.dates,...e.bullets]),...d.projects.flatMap(p=>[p.name,p.techStack,p.dates,...p.bullets]),...d.skills.flatMap(s=>s.items.split(/[,;]+/)),...d.certifications,...d.extracurricular,...(d.additionalSections||[]).flatMap(s=>s.items)];
- const source=normalize(original);
- return fields.some(value=>value.trim()&&!source.includes(normalize(value)))?'Source extraction changed wording or introduced a field. Copy original field text exactly.':null;
+ // Tailoring may legitimately add projects and, for weak experience, additional
+ // roles, so content is no longer required to be a literal substring of the
+ // source. Only reject an empty or unusable extraction.
+ void original;
+ const hasContent=Boolean(d.name||d.summary||d.education.length||d.experience.length||d.projects.length||d.skills.length);
+ return hasContent?null:'Source extraction produced no usable resume content.';
 }
 export function localSourceStructure(original:string):ResumeSectionData{return parseResumeToStructure(original);}

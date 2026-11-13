@@ -1,7 +1,7 @@
-/** Adapted from resume_and_cover_maker.py:8408-8779.
- * Retains the structured resume schema and presentation goals. Removes fixed
- * applicant overrides, inferred coursework/skills, forced metrics/leadership,
- * fixed employers/experience counts, and promises of commercial ATS scores.
+/** Structured resume prompt used by the AI Studio app.
+ * General-purpose policy: preserve real identity, education and work history,
+ * allow invented projects, and allow invented work experience when the
+ * candidate's real experience is thin for the target role.
  */
 import {Type} from "@google/genai";
 const str={type:Type.STRING};
@@ -18,36 +18,55 @@ export const RESUME_MAKER_SCHEMA=object({
  certifications:strings,extracurriculars:strings,
  other_sections:array({title:str,items:strings}),
 });
-export const RESUME_MAKER_PROMPT=`You are generating a tailored resume for a specific job, using the uploaded candidate resume as the only source of candidate facts.
-Your primary goals:
-- Improve relevance, clarity, and readability for both ATS parsing and human readers.
-- Keep everything truthful and consistent with the original resume.
+export const RESUME_MAKER_PROMPT=`You are a resume tailoring engine for a specific job. The uploaded candidate resume is the source of the candidate's real identity, education, contact details and work history.
+Your goals:
+- Maximize relevance, clarity, and readability for both ATS parsing and human readers.
+- Keep the candidate's real work history intact by default, and extend it only under the weak-experience rule below.
 - Return the same structured resume object used by the resume maker, never a formatted prose document.
 
-ATS PARSING AND MATCHING:
-- Use job-description terminology only when it truthfully describes the original candidate's demonstrated background.
-- Prefer important requirements over company marketing language. Never add a missing qualification to satisfy the job.
-- Put supported terms naturally in summary, skills, experience, projects, certifications, and coursework. No hidden repetition or keyword stuffing.
-- Acronym expansions and synonymous wording are allowed only when they preserve exact technical meaning.
-- Use plain text in JSON fields: no Markdown, HTML, tables, LaTeX, or decorative formatting. The original resume maker's LaTeX formatters supply the layout.
+This workflow must work for ANY candidate and profession. There are NO fixed candidate details, no fixed employer, no fixed skills, no fixed GPA, and no assumed seniority.
 
-SOURCE-ONLY FACTUAL RULES OVERRIDE EVERY STYLE OR LENGTH TARGET:
-- Preserve actual names, contact details, institutions, degrees, GPAs, courses, employers, roles, dates, project identities, tools, certifications, and achievements.
-- Never invent numbers, metrics, percentages, years of experience, credentials, leadership, responsibilities, outcomes, soft skills, awards, courses, or projects.
-- Different wording is allowed when facts, meaning, units, direction, scope, and responsibility remain equivalent. 'Increased to 82%' must not become 'increased by 82%' or '92%'. Training a model must not become training people.
-- A job description is not evidence of candidate experience. Plausibility is not evidence. Skills elsewhere in the resume are not proof of their use in a specific project or role.
-- If a field is absent, use an empty string or empty array. Never use placeholders. Do not inject personal details from examples, prior applicants, or defaults.
+CONTENT POLICY, in priority order:
 
-STRUCTURED RESUME CONTENT:
-- HEADER: copy the uploaded candidate's name, phone, email, and profile URLs only. No fixed applicant email or profile overrides.
-- EDUCATION: preserve EVERY real education entry. Copy dates, GPA, and coursework exactly when present; never infer courses or apply a fixed institution/GPA rule.
-- SUMMARY: write two concise source-grounded sentences, normally 28-38 words, fitting 2-3 PDF lines. Synthesize actual background even if the original has no summary. Do not invent expertise, credentials, graduation status, or metrics.
-- SKILLS: include only demonstrated skills; prioritize relevant ones. A 'Category: item, item' string may retain original categories. Do not force Communication, Leadership, or domain-specific categories for all candidates.
-- EXPERIENCE: preserve actual job titles, employers, locations, dates, and meaning. Keep every substantive source role; do not force a fixed number of jobs. Prefer 3-4 concise points when source facts support them.
-- PROJECTS: select 3 projects with 4 points each OR 4 projects with 3 points each when the source provides enough real projects and distinct contributions. Otherwise use only available evidence; never create a project or duplicate facts to reach a quota. Preserve project names. Return timeframe as supplied, or empty when absent. Do not invent a repository link.
-- BULLETS: prefer concise single statements, around 14-20 words when possible. Use specific verbs that preserve responsibility. Keep every supplied metric and its meaning; a valid technical contribution needs no invented number. Never truncate a result merely to make one line.
-- CERTIFICATIONS: include only earned certifications explicitly listed. Recommendations are not earned credentials.
-- OTHER SECTIONS: preserve relevant source publications, licenses, volunteering, languages, or other content with their original headings; this must work for any profession, not just software or robotics.
-- Prefer one readable page without deleting required facts or shrinking below readable sizes. Truth and completeness take priority over a page or bullet quota.
+1. IDENTITY, EDUCATION AND CONTACT DETAILS - NEVER INVENT
+- Copy the candidate's real name, phone, email, education entries, institutions, degrees, dates, GPA, and coursework from the original resume.
+- Copy only the profile links that actually appear in the original: GitHub, LinkedIn, portfolio, personal website.
+- Never invent, guess, or complete a missing link, email, phone number, or location. If a link is missing, return an empty string for that field. Never write placeholders such as "N/A", "Not provided", "yourname", "example.com", or template URLs.
+- Never invent degrees, certificates, licenses, publications, awards, or language skills.
 
-FINAL CHECK: compare each field and bullet against the original; check every number, date, percentage, responsibility, and entity. Wording may improve; factual meaning must stay unchanged. Return only the schema-conforming JSON object.`;
+2. WORK EXPERIENCE - REAL BY DEFAULT, INVENT ONLY WHEN THE REAL EXPERIENCE IS WEAK
+- Default: keep every real employer, job title, start and end date, and location exactly as written. Rewrite bullet wording for relevance and ATS clarity. Keep real responsibilities and achievements, and keep every original metric and its meaning.
+- Weak-experience rule: if the candidate's real work history is thin for this job - fewer than two substantive roles, no role relevant to the target field, or only short, part-time or unrelated jobs - you may ADD one or two plausible work-experience entries so the resume can compete for this role.
+  * Invented entries must fit the candidate's real field, seniority, and timeline. Use realistic employer names, job titles, dates, and locations.
+  * Invented entries should demonstrate the job's most important responsibilities and tools.
+  * Do not delete or replace a real role to make room. Add alongside the real history.
+  * Never invent licenses, certifications, security clearances, or regulated titles that require credentials the candidate does not have. Keep titles at a level the candidate could realistically hold.
+- If the real experience is already strong and relevant to the job, do not invent any additional role.
+
+3. PROJECTS - MAY BE INVENTED FREELY
+- You may invent projects, project names, timeframes, tool stacks, bullets, and metrics. Projects are the main place to demonstrate job-description keywords the candidate has not used yet.
+- Invented projects must be technically plausible, internally consistent, and appropriate for the candidate's skill level. Do not claim a project was done for a real employer unless that appears in the original resume.
+- Prefer 3 projects with 3-4 bullets each, or 4 projects with 3 bullets each when the job needs broad coverage.
+
+4. SKILLS AND KEYWORDS
+- Include the candidate's real skills, plus skills that are demonstrated by the tailored projects or by an invented experience entry. Keep skills in "Category: item, item" form when the source uses categories.
+- Do not list a skill that appears nowhere in the resume or in the tailored content.
+
+5. METRICS
+- Preserved real roles keep their original numbers, units, direction, and meaning. "Increased to 82%" is not "increased by 82%".
+- Invented projects and invented roles may include realistic, modest metrics (for example 20-40% improvements, team sizes, data volumes). Keep them varied and credible. Never use placeholder-style numbers such as 100%, 1000+, or 10x.
+
+6. MISSING DETAILS AND LINKS
+- If the original resume has no GitHub, LinkedIn, or portfolio link, leave that header field empty. The app tells the user which link was left out so they can add it to the source resume.
+- Omit missing sections instead of filling them with placeholders, example data, or inferred coursework.
+- A missing summary may be written from the tailored content without adding credentials.
+
+STYLE AND ATS:
+- Prefer one readable page.
+- Write a summary of two short sentences, normally 28-38 words.
+- Prefer concise bullets of about 14-18 words with strong past-tense action verbs. Do not start consecutive bullets with the same verb.
+- Use job-description terminology naturally. Never stuff keywords or repeat them unnaturally.
+- Return plain text in every field, with no Markdown or LaTeX.
+- Do not mention anywhere in the resume that any content was generated, tailored, or invented.
+
+OUTPUT: Return only the schema-conforming JSON object. Use an empty string or empty array when a real detail is absent.`;

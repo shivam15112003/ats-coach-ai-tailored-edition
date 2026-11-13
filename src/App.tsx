@@ -361,7 +361,7 @@ export default function App() {
             {/* Bottom Actions for Screen 2 */}
             <div className="bg-white/80 border border-[#E7DEC8] rounded-xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
               <div className="text-xs text-[#22302E]/75">
-                <span className="font-semibold text-[#22302E]">Next Step:</span> Tailor your bullet points using active phrasing and natural keyword alignment while strictly preserving factual truth.
+                <span className="font-semibold text-[#22302E]">Next Step:</span> Tailor your resume with relevant wording and projects. Real employers, titles, dates and education stay intact; if your work history is thin, the tailor may add a plausible role. Links missing from your resume stay left out.
               </div>
 
               <div className="flex items-center gap-3 w-full sm:w-auto">

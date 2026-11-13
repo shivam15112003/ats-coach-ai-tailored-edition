@@ -302,7 +302,7 @@ export function ComparisonView({
                   <span className="text-[10px] font-medium text-stone-500">Uploaded Baseline · Read-only</span>
                 </div>
                 <p className="text-[10px] text-[#22302E]/60">
-                  Document baseline used for ATS scoring and factual grounding
+                  Document baseline used for ATS scoring and source matching
                 </p>
               </div>
             </div>
@@ -392,7 +392,7 @@ export function ComparisonView({
                   <span className="text-[10px] font-bold uppercase tracking-wider bg-[#1E6A63] text-white px-2 py-0.5 rounded shadow-2xs">{generationMode === "source_preserved" ? "SOURCE-PRESERVED" : "AI-GENERATED"}</span>
                 </div>
                 <p className="text-[10px] text-[#22302E]/70">
-                  Targeted keyword alignment & bullet impact preserving factual truth
+                  Targeted keyword alignment, tailored projects, and optional added experience
                 </p>
               </div>
             </div>

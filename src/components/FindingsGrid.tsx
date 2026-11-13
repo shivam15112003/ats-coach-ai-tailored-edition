@@ -167,7 +167,7 @@ export function FindingsGrid({
                     ATS Integrity Principle:
                   </p>
                   <p className="text-[11px] leading-relaxed text-[#22302E]/80">
-                    If you have authentic experience with any of these items from class labs, personal projects, or internships, reframe your existing bullets to state them explicitly. If you do not have that experience, <strong>never invent it</strong>.
+                    If you have authentic experience with any of these items from class labs, personal projects, or internships, reframe your existing bullets to state them explicitly. If you do not have that experience, demonstrate it through a tailored project instead of claiming it in a real role.
                   </p>
                 </div>
               </div>
